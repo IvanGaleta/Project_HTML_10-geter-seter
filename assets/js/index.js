@@ -27,7 +27,7 @@ class RangeValidator{
         this.#to = to;
     }
     get range(){
-        return Arry(this.form, this.to);
+        return [this.#form, this.#to];
     }
     validate(num){
         if( num > this.#form || num < this.#to){
@@ -36,5 +36,5 @@ class RangeValidator{
         return num;
     }
 }
-const Range = new RangeValidator( 2, 50 );
+const Range = new RangeValidator( 5, 50 );
 console.log(Range);
