@@ -16,13 +16,13 @@ class RangeValidator{
     }
     set form(form){
         if (typeof form !== 'number' || isNaN(form)){
-            throw new RangeError ('Enter the number!!!')
+            throw RangeError ('Enter the number!!!')
         }
         this.#form = form;
     }
     set to(to){
         if(typeof to !== 'number' || isNaN(to)){
-            throw new RangeError ('Enter the number!!!')
+            throw RangeError ('Enter the number!!!')
         }
         this.#to = to;
     }
@@ -31,10 +31,10 @@ class RangeValidator{
     }
     validate(num){
         if( num > this.#form || num < this.#to){
-            throw new RangeError ('Wrong number!!!')
+            throw RangeError ('Wrong number!!!')
         }
         return num;
     }
 }
-const Range = new RangeValidator( 5, 50 );
+const Range = new RangeValidator( 'jj', 50 );
 console.log(Range);
