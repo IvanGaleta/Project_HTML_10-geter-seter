@@ -30,11 +30,14 @@ class RangeValidator{
         return [this.#form, this.#to];
     }
     validate(num){
+        if(typeof num !== 'number' || isNaN(num)){
+            throw RangeError ('Enter the number!!!')
+        }
         if( num > this.#form || num < this.#to){
             throw RangeError ('Wrong number!!!')
         }
         return num;
     }
 }
-const Range = new RangeValidator( 'jj', 50 );
+const Range = new RangeValidator( 5, 50 );
 console.log(Range);
